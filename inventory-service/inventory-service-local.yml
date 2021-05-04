@@ -21,6 +21,9 @@ spring:
         binder:
           brokers: "localhost:9092"
       bindings:
+        order-created-sink:
+          destination: "order.created"
+          group: "${spring.application.name}"
         order-canceled-sink:
           destination: "order.canceled"
           group: "${spring.application.name}"

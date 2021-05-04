@@ -21,6 +21,8 @@ spring:
         binder:
           brokers: "localhost:9092"
       bindings:
+        order-created-source:
+          destination: "order.created"
         order-canceled-source:
           destination: "order.canceled"
 
