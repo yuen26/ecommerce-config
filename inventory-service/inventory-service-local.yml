@@ -15,6 +15,15 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: "localhost:9092"
+      bindings:
+        order-canceled-sink:
+          destination: "order.canceled"
+          group: "${spring.application.name}"
 
 # ======================================================================================================================
 # Eureka client
