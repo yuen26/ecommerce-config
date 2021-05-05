@@ -20,13 +20,18 @@ spring:
       kafka:
         binder:
           brokers: "localhost:9092"
+          auto-create-topics: false
+          configuration:
+            auto.offset.reset: latest
       bindings:
-        order-created-sink:
+        order-created-in:
           destination: "order.created"
           group: "${spring.application.name}"
-        order-canceled-sink:
+          contentType: application/json
+        order-canceled-in:
           destination: "order.canceled"
           group: "${spring.application.name}"
+          contentType: application/json
 
 # ======================================================================================================================
 # Eureka client
