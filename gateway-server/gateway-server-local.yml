@@ -4,7 +4,7 @@ security:
   oauth2:
     resourceserver:
       jwt:
-        jwk-set-uri: 'http://localhost:8901/api/v1/rsa/public-key'
+        jwk-set-uri: http://localhost:8901/api/v1/rsa/public-key
 
 # Eureka client
 # ----------------------------------------------------------------------------------------------------------------------
