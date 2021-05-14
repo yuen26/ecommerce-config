@@ -24,6 +24,6 @@ eureka:
 
 # Application variables
 # ----------------------------------------------------------------------------------------------------------------------
-identity:
-  internal:
-    endpoint: http://localhost:8901/api/v1/accounts
+uaa:
+  create-account-endpoint:
+    internal: http://localhost:8901/api/v1/accounts
