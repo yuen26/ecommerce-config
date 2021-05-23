@@ -38,5 +38,5 @@ uaa:
     server-url: http://localhost:8901/auth
     realm: ashina
     client-id: admin-cli
-    username: admin
-    password: 1234
+    username: admin-cli
+    password: 12345678
