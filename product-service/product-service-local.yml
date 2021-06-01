@@ -5,7 +5,7 @@ spring:
   # Database
   data:
     mongodb:
-      uri: mongodb://localhost:27017/catalog
+      uri: mongodb://localhost:27017/product
 
   # Security
   security:
