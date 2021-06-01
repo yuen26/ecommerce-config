@@ -2,29 +2,27 @@
 # ----------------------------------------------------------------------------------------------------------------------
 spring:
 
+  # Datasource
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/payment?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: postgres
+    password: 1234
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+
   # Security
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8901/auth/realms/ashina
-
-  # Cloud
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: "localhost:9092"
-          auto-create-topics: false
-          configuration:
-            auto.offset.reset: latest
-      bindings:
-        order-created-out:
-          destination: "order.created"
-          contentType: application/json
-        order-canceled-out:
-          destination: "order.canceled"
-          contentType: application/json
 
 # Eureka client
 # ----------------------------------------------------------------------------------------------------------------------
