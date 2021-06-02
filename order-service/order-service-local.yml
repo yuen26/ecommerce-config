@@ -24,11 +24,25 @@ spring:
           configuration:
             auto.offset.reset: latest
       bindings:
-        order-created-out:
-          destination: "order.created"
+        product-reserved-response-in:
+          destination: "product.reserved.response"
+          group: "${spring.application.name}"
           contentType: application/json
-        order-canceled-out:
-          destination: "order.canceled"
+        payment-created-response-in:
+          destination: "payment.created.response"
+          group: "${spring.application.name}"
+          contentType: application/json
+        product-reserved-request-out:
+          destination: "product.reserved.request"
+          contentType: application/json
+        product-reserved-rollback-out:
+          destination: "product.reserved.rollback"
+          contentType: application/json
+        payment-created-request-out:
+          destination: "payment.created.request"
+          contentType: application/json
+        order-completed-out:
+          destination: "order.completed"
           contentType: application/json
 
 # Eureka client

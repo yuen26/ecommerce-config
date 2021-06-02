@@ -24,6 +24,24 @@ spring:
         jwt:
           issuer-uri: http://localhost:8901/auth/realms/ashina
 
+  # Cloud
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: "localhost:9092"
+          auto-create-topics: false
+          configuration:
+            auto.offset.reset: latest
+      bindings:
+        payment-created-request-in:
+          destination: "payment.created.request"
+          group: "${spring.application.name}"
+          contentType: application/json
+        payment-created-response-out:
+          destination: "payment.created.response"
+          contentType: application/json
+
 # Eureka client
 # ----------------------------------------------------------------------------------------------------------------------
 eureka:
