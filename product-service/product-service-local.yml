@@ -24,12 +24,8 @@ spring:
           configuration:
             auto.offset.reset: latest
       bindings:
-        reserve-product-in:
+        reserve-product-request-in:
           destination: "reserve.product"
-          group: "${spring.application.name}"
-          contentType: application/json
-        reserve-product-rollback-in:
-          destination: "reserve.product.rollback"
           group: "${spring.application.name}"
           contentType: application/json
         reserve-product-reply-out:

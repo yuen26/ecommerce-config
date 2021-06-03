@@ -34,7 +34,7 @@ spring:
           configuration:
             auto.offset.reset: latest
       bindings:
-        create-payment-in:
+        create-payment-request-in:
           destination: "create.payment"
           group: "${spring.application.name}"
           contentType: application/json

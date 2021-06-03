@@ -32,17 +32,14 @@ spring:
           destination: "create.payment.reply"
           group: "${spring.application.name}"
           contentType: application/json
-        reserve-product-out:
+        reserve-product-request-out:
           destination: "reserve.product"
           contentType: application/json
-        reserve-product-rollback-out:
-          destination: "reserve.product.rollback"
-          contentType: application/json
-        create-payment-out:
+        create-payment-request-out:
           destination: "create.payment"
           contentType: application/json
-        complete-order-out:
-          destination: "complete.order"
+        order-completed-out:
+          destination: "order.completed"
           contentType: application/json
 
 # Eureka client
