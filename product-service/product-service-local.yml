@@ -24,12 +24,12 @@ spring:
           configuration:
             auto.offset.reset: latest
       bindings:
-        reserve-product-request-in:
-          destination: "reserve.product"
+        reserve-product-requested-in:
+          destination: "reserve.product.requested"
           group: "${spring.application.name}"
           contentType: application/json
-        reserve-product-reply-out:
-          destination: "reserve.product.reply"
+        reserve-product-replied-out:
+          destination: "reserve.product.replied"
           contentType: application/json
 
 # Eureka client

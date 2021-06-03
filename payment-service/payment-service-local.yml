@@ -34,12 +34,12 @@ spring:
           configuration:
             auto.offset.reset: latest
       bindings:
-        create-payment-request-in:
-          destination: "create.payment"
+        create-payment-requested-in:
+          destination: "create.payment.requested"
           group: "${spring.application.name}"
           contentType: application/json
-        create-payment-reply-out:
-          destination: "create.payment.reply"
+        create-payment-replied-out:
+          destination: "create.payment.replied"
           contentType: application/json
 
 # Eureka client

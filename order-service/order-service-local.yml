@@ -24,19 +24,19 @@ spring:
           configuration:
             auto.offset.reset: latest
       bindings:
-        reserve-product-reply-in:
-          destination: "reserve.product.reply"
+        reserve-product-replied-in:
+          destination: "reserve.product.replied"
           group: "${spring.application.name}"
           contentType: application/json
-        create-payment-reply-in:
-          destination: "create.payment.reply"
+        create-payment-replied-in:
+          destination: "create.payment.replied"
           group: "${spring.application.name}"
           contentType: application/json
-        reserve-product-request-out:
-          destination: "reserve.product"
+        reserve-product-requested-out:
+          destination: "reserve.product.requested"
           contentType: application/json
-        create-payment-request-out:
-          destination: "create.payment"
+        create-payment-requested-out:
+          destination: "create.payment.requested"
           contentType: application/json
         order-completed-out:
           destination: "order.completed"
