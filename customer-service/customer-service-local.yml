@@ -2,20 +2,10 @@
 # ----------------------------------------------------------------------------------------------------------------------
 spring:
 
-  # Datasource
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/customer?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
-    username: postgres
-    password: 1234
-  jpa:
-    properties:
-      hibernate:
-        format_sql: true
-    show-sql: true
-    hibernate:
-      naming:
-        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  # Database
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/customer
 
   # Security
   security:

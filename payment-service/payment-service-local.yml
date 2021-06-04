@@ -2,20 +2,10 @@
 # ----------------------------------------------------------------------------------------------------------------------
 spring:
 
-  # Datasource
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/payment?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
-    username: postgres
-    password: 1234
-  jpa:
-    properties:
-      hibernate:
-        format_sql: true
-    show-sql: true
-    hibernate:
-      naming:
-        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  # Database
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/payment
 
   # Security
   security:
@@ -23,24 +13,6 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8901/auth/realms/ashina
-
-  # Cloud
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: "localhost:9092"
-          auto-create-topics: false
-          configuration:
-            auto.offset.reset: latest
-      bindings:
-        create-payment-requested-in:
-          destination: "create.payment.requested"
-          group: "${spring.application.name}"
-          contentType: application/json
-        create-payment-replied-out:
-          destination: "create.payment.replied"
-          contentType: application/json
 
 # Eureka client
 # ----------------------------------------------------------------------------------------------------------------------
