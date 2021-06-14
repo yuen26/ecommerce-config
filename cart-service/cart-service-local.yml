@@ -60,6 +60,10 @@ eureka:
 
 # Hystrix
 # ----------------------------------------------------------------------------------------------------------------------
+feign:
+  hystrix:
+    enabled: true
+
 hystrix:
   dashboard:
     proxy-stream-allow-list: "*"
