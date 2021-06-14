@@ -1,3 +1,17 @@
+# Server
+# ----------------------------------------------------------------------------------------------------------------------
+server:
+  port: 8004
+
+# Logging
+# ----------------------------------------------------------------------------------------------------------------------
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN
+    org.ashina.ecommerce: DEBUG
+
 # Spring
 # ----------------------------------------------------------------------------------------------------------------------
 spring:
@@ -34,19 +48,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-
-# Feign
-# ----------------------------------------------------------------------------------------------------------------------
-feign:
-  hystrix:
-    enabled: true
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
-
-hystrix:
-  dashboard:
-    proxy-stream-allow-list: "*"

@@ -1,3 +1,17 @@
+# Server
+# ----------------------------------------------------------------------------------------------------------------------
+server:
+  port: 8001
+
+# Logging
+# ----------------------------------------------------------------------------------------------------------------------
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN
+    org.ashina.ecommerce: DEBUG
+
 # Spring
 # ----------------------------------------------------------------------------------------------------------------------
 spring:
