@@ -40,11 +40,3 @@ eureka:
 feign:
   hystrix:
     enabled: true
-
-# Actuator endpoints
-# ----------------------------------------------------------------------------------------------------------------------
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
