@@ -9,7 +9,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: "*"
 
 # Logging
 # ----------------------------------------------------------------------------------------------------------------------
@@ -60,10 +60,12 @@ eureka:
 
 # Hystrix
 # ----------------------------------------------------------------------------------------------------------------------
+# Enable Hystrix for OpenFeign
 feign:
   hystrix:
     enabled: true
 
+# Support for Hystrix Dashboard
 hystrix:
   dashboard:
     proxy-stream-allow-list: "*"
